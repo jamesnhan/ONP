@@ -4,23 +4,23 @@ Transform the algebraic expression with brackets into RPN form (Reverse Polish N
 
 ## Input
 
-'''c
+```
     t [the number of expressions <= **100**]
     *expression* [length <= **400**]
     [other expressions]
-'''
+```
 
 Text grouped in [] do not appear in the input file.
 
 ## Output
 
-'''c
+```
     The *expression* in RPN form, one per line.
-'''
+```
 
 ## Example
 
-'''c
+```
     Input:
     3
     (a+(b*c))
@@ -31,4 +31,4 @@ Text grouped in [] do not appear in the input file.
     abc*+
     ab+zx+*
     at+bac++cd+^*
-'''
+```
