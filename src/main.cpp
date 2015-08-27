@@ -54,8 +54,8 @@ int main() {
                         in = s.top();
                         if (!IsParenthesis(in)) {
                             cout << in;
-                            s.pop();
                         }
+                        s.pop();
                     } while (in != '(');
                 }
             }
