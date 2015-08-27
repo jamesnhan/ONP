@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <stack>
 
 using namespace std;
@@ -31,14 +32,12 @@ int main() {
     cin >> t;
     while (t > 0) {
         stack<char> s = stack<char>();
-        char line[100];
+        string input;
         char in;
-        int i = 0;
-        cin.getline(line, 100, '\n');
-        cin.getline(line, 100, '\n');
-        cout << "Input " << line << endl;
+        cin >> input;
         do {
-            in = line[i++];
+            in = input.front();
+            input.erase(0, 1);
             if (IsValue(in)) {
                 cout << in;
             } else if (IsOperator(in)) {
@@ -52,14 +51,15 @@ int main() {
                     s.push(in);
                 } else if (in == ')') {
                     do {
-                        in = line[i++];
+                        in = s.top();
                         if (!IsParenthesis(in)) {
                             cout << in;
+                            s.pop();
                         }
                     } while (in != '(');
                 }
             }
-        } while (in != '\n' && in != '\0');
+        } while (input.length() > 0);
         while (s.size() > 0) {
             if (!IsParenthesis(s.top())) {
                 cout << s.top();
